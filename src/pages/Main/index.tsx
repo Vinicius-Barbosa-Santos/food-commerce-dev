@@ -6,6 +6,7 @@ export default function Main() {
   return (
     <C.Container>
       <SideBar />
+      <h1>Main</h1>
     </C.Container>
   )
 }

@@ -13,6 +13,14 @@ export const SideBar = () => {
             <nav>
                 <ul>
                     <li>
+                        <a href="#" className='active'>
+                            <BurgerIcon />
+
+                            <span>Hambúrgueres</span>
+                        </a>
+                    </li>
+
+                    <li>
                         <a href="#">
                             <BurgerIcon />
                             
