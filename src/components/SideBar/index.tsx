@@ -9,6 +9,9 @@ import menuImg from '../../assets/menu.svg'
 import { useState } from 'react'
 
 export const SideBar = () => {
+
+    // Sidebar - Finalizado
+
     const [menuOpen, setMenuOpen] = useState(false)
 
     const handleMenuToggle = () => {
