@@ -15,6 +15,7 @@ export const SideBar = () => {
                     <li>
                         <a href="#">
                             <BurgerIcon />
+                            
                             <span>Hambúrgueres</span>
                         </a>
                     </li>
