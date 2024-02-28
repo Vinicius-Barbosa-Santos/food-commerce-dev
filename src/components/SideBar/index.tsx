@@ -1,6 +1,9 @@
 import * as C from './styles'
 
 import { ReactComponent as BurgerIcon } from '../../assets/burger.svg'
+import { ReactComponent as PizzaIcon } from '../../assets/pizza.svg'
+import { ReactComponent as SodaPopIcon } from '../../assets/soda.svg'
+import { ReactComponent as IceCreamIcon } from '../../assets/ice-cream.svg'
 
 import menuImg from '../../assets/menu.svg'
 
@@ -22,9 +25,25 @@ export const SideBar = () => {
 
                     <li>
                         <a href="#">
-                            <BurgerIcon />
+                            <PizzaIcon />
                             
-                            <span>Hambúrgueres</span>
+                            <span>Pizzas</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <SodaPopIcon />
+                            
+                            <span>Bebidas</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <IceCreamIcon />
+                            
+                            <span>Sorvetes</span>
                         </a>
                     </li>
                 </ul>
