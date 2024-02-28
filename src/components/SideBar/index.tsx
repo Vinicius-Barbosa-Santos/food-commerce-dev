@@ -6,11 +6,20 @@ import { ReactComponent as SodaPopIcon } from '../../assets/soda.svg'
 import { ReactComponent as IceCreamIcon } from '../../assets/ice-cream.svg'
 
 import menuImg from '../../assets/menu.svg'
+import { useState } from 'react'
 
 export const SideBar = () => {
+    const [menuOpen, setMenuOpen] = useState(false)
+
+    const handleMenuToggle = () => {
+        setMenuOpen(!menuOpen)
+    }
+
     return (
-        <C.SideBarContainer>
-            <button type='button'>
+        <C.SideBarContainer
+            isMenuOpen={menuOpen}
+        >
+            <button type='button' onClick={handleMenuToggle}>
                 <img src={menuImg} alt="Abrir e fechar o menu" />
             </button>
             <nav>
