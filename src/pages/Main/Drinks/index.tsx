@@ -1,9 +1,9 @@
 import * as C from './styles'
 
-export const BurgerPage = () => {
+export const DrinksPages = () => {
     return(
         <div>
-            <h1>Hamburgers</h1>
+            <h1>Bebidas</h1>
         </div>
     )
 }
