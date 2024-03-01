@@ -28,7 +28,7 @@ export const SideBar = () => {
             <nav>
                 <ul>
                     <li>
-                        <NavLink to={'/'}>
+                        <NavLink to={'/'} >
                             <BurgerIcon />
 
                             <span>Hambúrgueres</span>
