@@ -1,9 +1,8 @@
+import { Head } from '../../../components/Head'
 import * as C from './styles'
 
 export const IceCreamsPages = () => {
-    return(
-        <div>
-            <h1>Sorvetes</h1>
-        </div>
+    return (
+        <Head title='Sorvetes' description='Nossos Melhores Sorvetes'/>
     )
 }

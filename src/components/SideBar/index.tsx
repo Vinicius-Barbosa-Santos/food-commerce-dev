@@ -38,7 +38,7 @@ export const SideBar = () => {
                     <li>
                         <NavLink to={'/pizzas'}>
                             <PizzaIcon />
-                            
+
                             <span>Pizzas</span>
                         </NavLink>
                     </li>
@@ -46,7 +46,7 @@ export const SideBar = () => {
                     <li>
                         <NavLink to={'/drinks'}>
                             <SodaPopIcon />
-                            
+
                             <span>Bebidas</span>
                         </NavLink>
                     </li>
@@ -54,7 +54,7 @@ export const SideBar = () => {
                     <li>
                         <NavLink to={'/ice-creams'}>
                             <IceCreamIcon />
-                            
+
                             <span>Sorvetes</span>
                         </NavLink>
                     </li>
