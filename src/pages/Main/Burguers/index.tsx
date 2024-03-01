@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { Head } from '../../../components/Head'
+import { Snacks } from '../../../components/Snacks'
 import { SnackTitle } from '../../../components/SnackTitle'
 import * as C from './styles'
 
@@ -31,6 +32,7 @@ export const BurgerPage = () => {
         <>
             <Head title='Hambúrgueres' description='Nossos Melhores Burgers' />
             <SnackTitle>Hambúrgueres</SnackTitle>
+            <Snacks snacks={data}/>
         </>
     )
 }
