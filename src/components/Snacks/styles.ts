@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const SnacksContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(450px, auto));
   gap: 1.75rem;
 
   @media (max-width: 500px) {
@@ -26,7 +26,7 @@ export const SnacksContainer = styled.div`
     > img {
       object-fit: cover;
       width: 100%;
-      height: 22rem;
+      height: 30rem;
       border-radius: 4px;
       margin-bottom: 0.375rem;
     }
