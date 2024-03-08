@@ -1,11 +1,12 @@
 import { FiPlus } from 'react-icons/fi'
 
+import { SnackItemType } from '../../interface/SnackItemType'
 import { priceFormatter } from '../../utils/priceFormatter'
 import { SkeletonSnack } from './SkeletonSnack'
 import * as C from './styles'
 
 interface SnacksProps {
-  snacks: any[]
+  snacks: SnackItemType[]
 }
 
 export function Snacks({ snacks }: SnacksProps) {
