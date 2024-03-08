@@ -1,9 +1,9 @@
 import { darken } from 'polished'
 import styled from 'styled-components'
 
-export const SnacksContainer = styled.div`
+export const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   gap: 1.75rem;
 
   @media (max-width: 500px) {
@@ -23,7 +23,7 @@ export const SnacksContainer = styled.div`
       text-align: center;
     }
 
-    > img {
+    img {
       object-fit: cover;
       width: 100%;
       height: 11.25rem;
@@ -48,9 +48,9 @@ export const SnacksContainer = styled.div`
       }
 
       button {
+        background: ${({ theme }) => theme.colors.red};
         width: 3rem;
         height: 3rem;
-
         border: none;
         border-radius: 50%;
 
@@ -58,10 +58,8 @@ export const SnacksContainer = styled.div`
         align-items: center;
         justify-content: center;
 
-        background: ${({ theme }) => theme.colors.red};
-
         svg {
-          color: ${({ theme }) => theme.colors.white};
+          stroke: ${({ theme }) => theme.colors.white};
           width: 1.5rem;
           height: 1.5rem;
         }

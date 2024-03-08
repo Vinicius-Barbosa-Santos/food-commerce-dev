@@ -1,32 +1,31 @@
 import { FiPlus } from 'react-icons/fi'
 
-import { SnackItemType } from '../../interface/SnackItemType'
 import { priceFormatter } from '../../utils/priceFormatter'
+import { SkeletonSnack } from './SkeletonSnack'
 import * as C from './styles'
 
 interface SnacksProps {
-    snacks: SnackItemType[]
+  snacks: any[]
 }
 
-export const Snacks = ({ snacks }: SnacksProps) => {
-    return (
-        <C.SnacksContainer>
-            {!snacks.length ? (
-                <p>loading</p>
-            ) : (
-                snacks.map((snackItem) => (
-                    <div key={snackItem.id} className='snack'>
-                        <h2>{snackItem.name}</h2>
-                        <img src={snackItem.image} alt={snackItem.name} />
-                        <p>{snackItem.description}</p>
-                        <div>
-                            <strong>{priceFormatter.format(snackItem.price)}</strong>
-                            <button type='button'>
-                                <FiPlus />
-                            </button>
-                        </div>
-                    </div>
-                )))}
-        </C.SnacksContainer>
-    )
+export function Snacks({ snacks }: SnacksProps) {
+  return (
+    <C.Container>
+      {!snacks.length
+        ? [1, 2, 3, 4,].map((n) => <SkeletonSnack key={n} />)
+        : snacks.map((snack) => (
+          <div key={snack.id} className='snack'>
+            <h2>{snack.name}</h2>
+            <img src={snack.image} alt={snack.name} />
+            <p>{snack.description}</p>
+            <div>
+              <strong>{priceFormatter.format(snack.price)}</strong>
+              <button type='button'>
+                <FiPlus />
+              </button>
+            </div>
+          </div>
+        ))}
+    </C.Container>
+  )
 }
