@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom'
 import { Normalize } from 'styled-normalize'
 
+import { CartProvider } from './contexts/CartContext'
 import { SnackContextProvider } from './contexts/SnackContext'
 import { AppRoutes } from './routes'
 import { GlobalStyle } from './styles/global'
@@ -11,9 +12,11 @@ export default function App() {
     <BrowserRouter>
       <Theme>
         <SnackContextProvider>
-          <AppRoutes />
-          <GlobalStyle />
-          <Normalize />
+          <CartProvider>
+            <AppRoutes />
+            <GlobalStyle />
+            <Normalize />
+          </CartProvider>
         </SnackContextProvider>
       </Theme>
     </BrowserRouter>

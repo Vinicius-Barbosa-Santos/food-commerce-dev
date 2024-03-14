@@ -1,5 +1,6 @@
 import { FiPlus } from 'react-icons/fi'
 
+import { useCart } from '../../contexts/CartContext'
 import { SnackItemType } from '../../interface/SnackItemType'
 import { priceFormatter } from '../../utils/priceFormatter'
 import { SkeletonSnack } from './SkeletonSnack'
@@ -10,6 +11,8 @@ interface SnacksProps {
 }
 
 export function Snacks({ snacks }: SnacksProps) {
+  const { addSnackIntoCart } = useCart()
+
   return (
     <C.Container>
       {!snacks.length
@@ -21,7 +24,7 @@ export function Snacks({ snacks }: SnacksProps) {
             <p>{snack.description}</p>
             <div>
               <strong>{priceFormatter.format(snack.price)}</strong>
-              <button type='button'>
+              <button type='button' onClick={() => addSnackIntoCart(snack)}>
                 <FiPlus />
               </button>
             </div>
