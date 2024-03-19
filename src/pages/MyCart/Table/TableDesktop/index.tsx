@@ -1,3 +1,5 @@
+import minusImg from '../../../../assets/circle-minus.svg'
+import plusImg from '../../../../assets/circle-plus.svg'
 import { useCart } from '../../../../contexts/CartContext'
 import { priceFormatter } from '../../../../utils/priceFormatter'
 import * as C from './styles'
@@ -31,7 +33,17 @@ export const TableDesktop = () => {
                             <td>
                                 Ações do carrinho
                             </td>
-                            <td>{item.quantity}</td>
+                            <td>
+                                <div>
+                                    <button type='button' onClick={() => console.log(`decrementar snack`, item)}>
+                                        <img src={minusImg} alt="Remover quantidade" />
+                                    </button>
+                                    {`${item.quantity}`.padStart(2, '0')}
+                                    <button type='button' onClick={() => console.log(`incrementar snack`, item)}>
+                                        <img src={plusImg} alt="Adicionar quantidade" />
+                                    </button>
+                                </div>
+                            </td>
                             <td>
                                 <h5>{priceFormatter.format(item.subtotal)}</h5>
                             </td>

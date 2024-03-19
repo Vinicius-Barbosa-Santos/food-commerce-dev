@@ -26,7 +26,7 @@ export const Container = styled.div`
     td {
       padding: 1.5rem 1rem 1.5rem 1rem;
       padding-top: 1.5rem;
-      border-bottom: 1px solid ${({theme}) => theme.colors.gray600};
+      border-bottom: 1px solid ${({ theme }) => theme.colors.gray600};
 
       h4 {
         margin-bottom: 0.5rem;
@@ -37,6 +37,22 @@ export const Container = styled.div`
       > span {
         font-weight: 700;
         font-size: 1.5rem;
+      }
+
+      div {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+
+        button {
+          background: none;
+          flex: 0;
+          border: none;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       }
 
       h5 {
@@ -80,7 +96,7 @@ export const Container = styled.div`
           justify-content: center;
 
           svg {
-            fill: ${({theme}) => theme.colors.yellow};
+            fill: ${({ theme }) => theme.colors.yellow};
             width: 1.5rem;
             height: 1.5rem;
           }
