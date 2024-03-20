@@ -2,6 +2,7 @@ import { FaTrashAlt } from 'react-icons/fa'
 
 import minusImg from '../../../../assets/circle-minus.svg'
 import plusImg from '../../../../assets/circle-plus.svg'
+import { ConfirmOrder } from '../../../../components/ConfirmOrder'
 import { useCart } from '../../../../contexts/CartContext'
 import { priceFormatter } from '../../../../utils/priceFormatter'
 import * as C from './styles'
@@ -58,6 +59,8 @@ export const TableDesktop = () => {
                     ))}
                 </tbody>
             </table>
+
+            <ConfirmOrder />
         </C.Container>
     )
 }
