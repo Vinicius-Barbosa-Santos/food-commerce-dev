@@ -8,7 +8,7 @@ import * as C from './styles'
 
 export const TableDesktop = () => {
 
-    const { cart, removeSnackFromCart } = useCart()
+    const { cart, removeSnackFromCart, snackCartIncrement, snackCartDecrement } = useCart()
 
     return (
         <C.Container>
@@ -37,11 +37,11 @@ export const TableDesktop = () => {
                             </td>
                             <td>
                                 <div>
-                                    <button type='button' onClick={() => console.log(`decrementar snack`, item)}>
+                                    <button type='button' onClick={() => snackCartDecrement(item)}>
                                         <img src={minusImg} alt="Remover quantidade" />
                                     </button>
                                     {`${item.quantity}`.padStart(2, '0')}
-                                    <button type='button' onClick={() => console.log(`incrementar snack`, item)}>
+                                    <button type='button' onClick={() => snackCartIncrement(item)}>
                                         <img src={plusImg} alt="Adicionar quantidade" />
                                     </button>
                                 </div>
