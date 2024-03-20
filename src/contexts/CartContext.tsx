@@ -9,22 +9,13 @@ interface Snack extends SnackItemType {
     subtotal: number
 }
 
-interface RemoveSnackFromCart {
-    id: number,
-    snack: string
-}
-
-interface UpdateCartProps {
-    id: number,
-    snack: string,
-    newQuantity: number
-}
-
 interface CartContextProps {
     cart: Snack[]
     addSnackIntoCart: (snack: SnackItemType) => void,
-    // removeSnackFromCart: ({ id, snack }: RemoveSnackFromCart) => void,
-    // updateCart: ({ id, snack, newQuantity }: UpdateCartProps) => void
+    removeSnackFromCart: (id: number, snack: SnackItemType) => void,
+    snackCartIncrement: (id: number, snack: Snack) => void
+    snackCartDecrement: (id: number, snack: Snack) => void
+    confirmOrder: () => void
 }
 
 export const CartContext = createContext({} as CartContextProps)
@@ -66,6 +57,24 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         toast.success(`${snackEmoji(snack.snack)} ${snack.name} adicionado nos pedidos!`)
         setCart(newCart)
     }
+
+    // const removeSnackFromCart = (id: number, snack: Snack) => {
+
+    // }
+
+    const updateSnackQuantity = (id: number, snack: Snack, newQuantity: number) => {}
+
+    const snackCartIncrement = (id: number, snack: Snack) => {
+        updateSnackQuantity(id, snack, snack.quantity + 1)
+    }
+
+    const snackCartDecrement = (id: number, snack: Snack) => {
+        updateSnackQuantity(id, snack, snack.quantity - 1)
+    }
+
+    // const confirmOrder = () => {
+
+    // }
 
     return (
         <CartContext.Provider value={{ cart, addSnackIntoCart }}>
