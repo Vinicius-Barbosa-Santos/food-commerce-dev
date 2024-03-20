@@ -12,9 +12,9 @@ interface Snack extends SnackItemType {
 interface CartContextProps {
     cart: Snack[]
     addSnackIntoCart: (snack: SnackItemType) => void,
-    removeSnackFromCart: (id: number, snack: SnackItemType) => void,
-    snackCartIncrement: (id: number, snack: Snack) => void
-    snackCartDecrement: (id: number, snack: Snack) => void
+    removeSnackFromCart: (snack: Snack) => void,
+    snackCartIncrement: (snack: Snack) => void
+    snackCartDecrement: (snack: Snack) => void
     confirmOrder: () => void
 }
 
@@ -58,26 +58,30 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         setCart(newCart)
     }
 
-    // const removeSnackFromCart = (id: number, snack: Snack) => {
+    const removeSnackFromCart = (snack: Snack) => {
+        const newCart = cart.filter((item) => !(item.id === snack.id && item.snack === snack.snack))
 
-    // }
-
-    const updateSnackQuantity = (id: number, snack: Snack, newQuantity: number) => {}
-
-    const snackCartIncrement = (id: number, snack: Snack) => {
-        updateSnackQuantity(id, snack, snack.quantity + 1)
+        setCart(newCart)
     }
 
-    const snackCartDecrement = (id: number, snack: Snack) => {
-        updateSnackQuantity(id, snack, snack.quantity - 1)
+    const updateSnackQuantity = (snack: Snack, newQuantity: number) => {
+        return
     }
 
-    // const confirmOrder = () => {
+    const snackCartIncrement = (snack: Snack) => {
+        updateSnackQuantity(snack, snack.quantity + 1)
+    }
 
-    // }
+    const snackCartDecrement = (snack: Snack) => {
+        updateSnackQuantity(snack, snack.quantity - 1)
+    }
+
+    const confirmOrder = () => {
+        return
+    }
 
     return (
-        <CartContext.Provider value={{ cart, addSnackIntoCart }}>
+        <CartContext.Provider value={{ cart, addSnackIntoCart, removeSnackFromCart, snackCartIncrement, snackCartDecrement, confirmOrder }}>
             {children}
         </CartContext.Provider>
     )
