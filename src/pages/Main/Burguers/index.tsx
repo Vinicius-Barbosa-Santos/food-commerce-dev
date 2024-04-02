@@ -5,7 +5,7 @@ import { useSnack } from '../../../contexts/SnackContext'
 
 export const BurgerPage = () => {
     const { burgers } = useSnack()
-    
+
     return (
         <>
             <Head title='Hambúrgueres' description='Nossos Melhores Burgers' />

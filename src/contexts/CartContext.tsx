@@ -44,7 +44,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
                 return item
             })
 
-            toast.success(`Outra(a) ${snack.snack} ${snack.name} adicionado nos pedidos!`)
+            toast.success(`Outra(a) ${snackEmoji(snack.snack)} ${snack.name} adicionado nos pedidos!`)
             setCart(newCart)
             return
         }
@@ -68,23 +68,23 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         if (newQuantity <= 0) return
 
         const snackExistentInCart = cart.find(
-          (item) => item.id === snack.id && item.snack === snack.snack,
+            (item) => item.id === snack.id && item.snack === snack.snack,
         )
-    
+
         if (!snackExistentInCart) return
-    
+
         const newCart = cart.map((item) => {
-          if (item.id === snackExistentInCart.id && item.snack === snackExistentInCart.snack) {
-            return {
-              ...item,
-              quantity: newQuantity,
-              subtotal: item.price * newQuantity,
+            if (item.id === snackExistentInCart.id && item.snack === snackExistentInCart.snack) {
+                return {
+                    ...item,
+                    quantity: newQuantity,
+                    subtotal: item.price * newQuantity,
+                }
             }
-          }
-    
-          return item
+
+            return item
         })
-    
+
         setCart(newCart)
     }
 
