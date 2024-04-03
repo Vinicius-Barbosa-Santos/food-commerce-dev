@@ -1,4 +1,5 @@
 import { Head } from '../../components/Head'
+import { PayOrder } from '../../components/OrderCloseAction/PayOrder'
 import { OrderHeader } from '../../components/OrderHeader'
 import * as C from './styles'
 
@@ -153,6 +154,7 @@ export const Payment = () => {
                         </div>
                     </div>
                 </C.Form>
+                <PayOrder />
             </C.Inner>
         </C.Container>
     )
