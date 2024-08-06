@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: ' http://localhost:8080',
+  baseURL: ' https://db-food-commerce-dev.vercel.app',
 })
 
 export default api
